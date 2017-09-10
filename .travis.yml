@@ -5,8 +5,8 @@ compiler:
   - gcc
 
 before_script:
-  - apt-get update -qq
-  - apt-get install -qq libtesseract-dev
+  - sudo apt-get update -qq
+  - sudo apt-get install -y libtesseract-dev
   - mkdir build
   - cd build
   - cmake ..
