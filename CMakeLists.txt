@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(travis-ci-cpp)
+project(travis-ci-cpp CXX)
 
 enable_testing()
 
