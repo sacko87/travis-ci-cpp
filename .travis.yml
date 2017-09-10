@@ -11,4 +11,4 @@ before_script:
   - cd build
   - cmake ..
 
-script: make
+script: make -j VERBOSE=1 && ./travis-ci-cpp
