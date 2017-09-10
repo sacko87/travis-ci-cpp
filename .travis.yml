@@ -7,6 +7,7 @@ compiler:
 before_script:
   - sudo apt-get update -qq
   - sudo apt-get install -y libtesseract-dev libleptonica-dev
+  - pkg-config --cflags --libs tesseract
   - mkdir build
   - cd build
   - cmake ..
