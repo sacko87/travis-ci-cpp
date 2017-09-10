@@ -1,10 +1,10 @@
 #include <iostream>
-#include <tesseract/baseapi.h>
+#include <leptonica/allheaders.h>
 
 using namespace std;
 
 int
 main(void) {
-  cout << tesseract::TessBaseAPI::Version() << endl;
+  cout << getImagelibVersions() << endl;
   return 0;
 }

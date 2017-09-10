@@ -1,14 +1,13 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8)
 project(travis-ci-cpp)
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
 add_executable(travis-ci-cpp main.cpp)
 
-# https://stackoverflow.com/a/29316084
-find_package(PkgConfig REQUIRED)
-pkg_search_module(TESS REQUIRED tesseract)
+find_package(Leptonica REQUIRED)
 
-target_link_libraries(travis-ci-cpp ${TESS_LIBRARIES})
-target_include_directories(travis-ci-cpp PUBLIC ${TESS_INCLUDE_DIRS})
-target_compile_options(travis-ci-cpp PUBLIC ${TESS_CFLAGS_OTHER})
+target_link_libraries(travis-ci-cpp ${Leptonica_LIBRARIES})
+target_include_directories(travis-ci-cpp PUBLIC ${Leptonica_INCLUDE_DIRS})
 
 install(TARGETS travis-ci-cpp DESTINATION bin)
