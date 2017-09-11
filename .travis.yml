@@ -7,7 +7,20 @@ language: cpp
 matrix:
   include:
     - os: linux
-      compiler: gcc
+      compiler: g++-5
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5.0
+            - libtesseract-dev
+            - libleptonica-dev
+          env:
+            - MATRIX_EVAL="CC=gcc-5.0 && CXX=g++-5.0"
+
+    - os: linux
+      compiler: g++-4.9
       addons:
         apt:
           sources:
@@ -25,6 +38,6 @@ before_install:
 before_script:
   - mkdir build
   - cd build
-  - cmake ..
+  - cmake -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX} ..
 
 script: make -j VERBOSE=1 && ARGS=-V make test
