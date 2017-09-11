@@ -55,6 +55,7 @@ matrix:
             - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 
 before_install:
+  - echo "${MATRIX_EVAL}"
   - eval "${MATRIX_EVAL}"
 
 before_script:
