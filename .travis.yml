@@ -12,8 +12,8 @@ matrix:
             - g++-4.9
             - libtesseract-dev
             - libleptonica-dev
-          env:
-            - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
+      env:
+        - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
 
     - os: linux
       compiler: g++-5
@@ -25,8 +25,8 @@ matrix:
             - g++-5
             - libtesseract-dev
             - libleptonica-dev
-          env:
-            - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
+      env:
+        - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
 
     - os: linux
       compiler: g++-6
@@ -38,8 +38,8 @@ matrix:
             - g++-6
             - libtesseract-dev
             - libleptonica-dev
-          env:
-            - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+      env:
+        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
 
     - os: linux
       compiler: g++-7
@@ -51,8 +51,8 @@ matrix:
             - g++-7
             - libtesseract-dev
             - libleptonica-dev
-          env:
-            - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+      env:
+        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 
 before_install:
   - echo "${MATRIX_EVAL}"
