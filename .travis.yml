@@ -54,8 +54,16 @@ matrix:
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 
+    - os: linux
+      services:
+        - docker
+      before_install:
+        - docker build -t sacko87/travis-ci-cpp .
+      script:
+        - docker run --rm -it sacko87/travis-ci-cpp
+
+
 before_install:
-  - echo "${MATRIX_EVAL}"
   - eval "${MATRIX_EVAL}"
 
 before_script:
