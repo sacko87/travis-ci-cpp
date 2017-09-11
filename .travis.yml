@@ -55,10 +55,12 @@ matrix:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 
     - os: linux
+      compiler: docker
       services:
         - docker
       before_install:
         - docker build -t sacko87/travis-ci-cpp .
+      before_script:
       script:
         - docker run --rm -it sacko87/travis-ci-cpp
 
