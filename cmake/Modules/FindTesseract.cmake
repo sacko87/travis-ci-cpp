@@ -1,6 +1,6 @@
 include(LibFindMacros)
 
-libfind_package(Leptonica Leptonica)
+libfind_package(Tesseract Leptonica)
 
 libfind_pkg_check_modules(Tesseract_PKGCONF tesseract)
 
@@ -14,7 +14,7 @@ find_library(Tesseract_LIBRARY
   PATHS ${Tesseract_PKGCONF_LIBRARY_DIRS} ${CMAKE_LIBRARY_PATH}
 )
 
-set(Tesseract_PROCESS_INCLUDES Tesseract_INCLUDE_DIR Leptonica_INCLUDE_DIR)
-set(Tesseract_PROCESS_LIBS Tesseract_LIBRARY Leptonica_LIBRARY)
+set(Tesseract_PROCESS_INCLUDES Tesseract_INCLUDE_DIR)
+set(Tesseract_PROCESS_LIBS Tesseract_LIBRARY)
 
 libfind_process(Tesseract)
